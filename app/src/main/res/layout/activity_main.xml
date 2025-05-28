@@ -8,6 +8,7 @@
     android:padding="24dp">
 
     <LinearLayout
+        android:id="@+id/timeContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -17,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvHour"
+            android:id="@+id/hourTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_time"
@@ -36,7 +37,7 @@
             android:layout_marginHorizontal="4dp"/>
 
         <TextView
-            android:id="@+id/tvMinute"
+            android:id="@+id/minuteTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_time"
@@ -45,18 +46,17 @@
             android:fontFamily="monospace"
             android:letterSpacing="0.1"/>
 
-        <TextView
-            android:id="@+id/tvSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/default_time"
-            android:textColor="#CCCCCC"
-            android:textSize="56sp"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.1"
-            android:layout_marginStart="12dp"
-            android:layout_gravity="center_vertical"/>
-
     </LinearLayout>
+
+    <com.zrzring.douyin_clock.ProgressView
+        android:id="@+id/secondProgressView"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="@id/timeContainer"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/timeContainer"
+        app:layout_constraintStart_toStartOf="@id/timeContainer"
+        app:layout_constraintTop_toTopOf="@id/timeContainer"
+        app:layout_constraintWidth_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
